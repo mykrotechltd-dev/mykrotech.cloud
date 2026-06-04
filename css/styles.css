@@ -375,7 +375,7 @@ section:nth-child(even) {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 72px;
+  height: 88px;
 }
 
 /* Logo */
@@ -387,7 +387,7 @@ section:nth-child(even) {
 }
 
 .nav-logo-img {
-  height: 72px;
+  height: 100px;
   width: auto;
   display: block;
   object-fit: contain;
