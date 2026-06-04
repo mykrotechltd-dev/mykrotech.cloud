@@ -1,323 +1,492 @@
 <!DOCTYPE html>
 <!--
-  ============================================================
-  MYKROTECH ETHERWORX SERVICES LTD — Main Website
-  ============================================================
-  HOW TO RUN:
-    Open index.html directly in any modern browser (Chrome, Firefox, Edge).
-    No build step or server required for local viewing.
-
-  HOW TO DEPLOY:
-    Upload the entire "mykrotech-website" folder to any static host:
-    - Netlify:      drag & drop the folder at app.netlify.com/drop
-    - Vercel:       run "npx vercel" in this folder
-    - GitHub Pages: push to a repo, enable Pages in Settings
-    - Any web host: upload via FTP/cPanel, point domain to this folder
-
-  EDITING GUIDE:
-    - Colors / Fonts / Spacing → css/styles.css  (top :root block)
-    - Animations / Interactivity → js/main.js
-    - Page content → edit sections below
-  ============================================================
+  MYKROTECH ETHERWORX SERVICES LTD — Main Website (Redesigned)
+  ─────────────────────────────────────────────────────────────
+  Open index.html in any modern browser — no build step required.
+  Deploy: drag the entire folder to app.netlify.com/drop
+  Edit content: sections are clearly labelled below.
+  Edit styles: css/styles.css | Edit interactions: js/main.js
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mykrotech Etherworx Services Ltd — Cloud Computing, Cybersecurity, Networking, IT Consulting, Software Development & Digital Solutions for businesses across Africa and beyond." />
+  <meta name="description" content="Mykrotech Etherworx Services Ltd — Cloud, Cybersecurity, Networking, IT Consulting, Software Development & Digital Solutions for businesses across Africa." />
   <meta name="theme-color" content="#050a14" />
-
-  <!-- Open Graph -->
   <meta property="og:title"       content="Mykrotech Etherworx Services Ltd" />
-  <meta property="og:description" content="We help businesses automate, digitize, and scale with cutting-edge technology solutions." />
+  <meta property="og:description" content="Redefine what your business can achieve with next-generation technology solutions." />
   <meta property="og:type"        content="website" />
-
   <title>Mykrotech Etherworx Services Ltd — Digital Transformation Experts</title>
 
-  <!-- Google Fonts: Space Grotesk + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome 6 Free (icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuTy/Sz92KEkalmLQxN7MgZCsR2JBbGkOXtU3wKBpQ+DzBwAFuTABLGLZzNQcgJEXe4R0TIYB7l3b7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       PARTICLE CANVAS — drawn by js/main.js over the hero section
-       ============================================================ -->
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
-  <!-- ============================================================
-       BACK TO TOP BUTTON
-       ============================================================ -->
   <button id="back-to-top" aria-label="Back to top">
     <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </button>
 
-  <!-- ============================================================
+  <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
-       ============================================================ -->
+       ═══════════════════════════════════════════════════════ -->
   <header id="navbar" role="banner">
     <div class="container">
       <nav class="nav-inner" aria-label="Main navigation">
 
-        <!-- Logo -->
-        <a href="#home" class="nav-logo" aria-label="Mykrotech Etherworx — go to homepage">
+        <a href="#home" class="nav-logo" aria-label="Mykrotech Etherworx — homepage">
           <img src="mylogo.png" alt="Mykrotech Etherworx Services Ltd" class="nav-logo-img" />
         </a>
 
-        <!-- Desktop nav links -->
         <ul class="nav-links" role="list">
-          <li><a href="#home"         class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#home"       class="active">Home</a></li>
+          <li><a href="#who-we-are">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#blog-preview">Blog</a></li>
+          <li><a href="blog.html">Insights Hub</a></li>
+          <li><a href="learning.html">Learning</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Desktop CTA -->
-        <a href="#contact" class="btn btn-primary nav-cta btn-sm">Get Started</a>
+        <a href="#contact" class="btn btn-primary nav-cta btn-sm">Contact Us</a>
 
-        <!-- Mobile hamburger -->
-        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
         </button>
-
       </nav>
     </div>
 
-    <!-- Mobile slide-down menu -->
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <nav class="mobile-menu" id="mobile-nav" aria-label="Mobile navigation">
       <a href="#home">Home</a>
-      <a href="#about">About Us</a>
+      <a href="#who-we-are">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#blog-preview">Blog</a>
+      <a href="blog.html">Insights Hub</a>
+      <a href="learning.html">Learning</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Contact Us</a>
     </nav>
   </header>
 
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
   <main id="main-content">
 
-    <!-- ============================================================
-         SECTION 1 — HERO
-         ============================================================ -->
+    <!-- ═══════════════════════════════════════════════════════
+         1. HERO
+         ═══════════════════════════════════════════════════════ -->
     <section id="home" aria-labelledby="hero-heading">
-
-      <!-- Background glow orbs (CSS-rendered, no images) -->
-      <div class="hero-glow"     aria-hidden="true"></div>
-      <div class="hero-orb-left" aria-hidden="true"></div>
+      <div class="hero-glow"      aria-hidden="true"></div>
+      <div class="hero-orb-left"  aria-hidden="true"></div>
       <div class="hero-orb-right" aria-hidden="true"></div>
 
-      <!-- Decorative circuit SVG (bottom-right corner) -->
-      <svg class="hero-circuit" aria-hidden="true" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Decorative circuit SVG -->
+      <svg class="hero-circuit" aria-hidden="true" viewBox="0 0 480 480" fill="none">
         <rect x="60"  y="60"  width="360" height="360" rx="12" stroke="#00d4ff" stroke-width="1"/>
-        <rect x="100" y="100" width="280" height="280" rx="8"  stroke="#8b5cf6" stroke-width="0.8"/>
-        <line x1="60"  y1="240" x2="480" y2="240" stroke="#00d4ff" stroke-width="0.6"/>
-        <line x1="240" y1="60"  x2="240" y2="480" stroke="#00d4ff" stroke-width="0.6"/>
-        <circle cx="60"  cy="60"  r="6" fill="#00d4ff"/>
-        <circle cx="420" cy="60"  r="6" fill="#8b5cf6"/>
-        <circle cx="60"  cy="420" r="6" fill="#8b5cf6"/>
-        <circle cx="420" cy="420" r="6" fill="#00d4ff"/>
+        <rect x="110" y="110" width="260" height="260" rx="8"  stroke="#8b5cf6" stroke-width="0.7"/>
+        <line x1="60"  y1="240" x2="480" y2="240" stroke="#00d4ff" stroke-width="0.5"/>
+        <line x1="240" y1="60"  x2="240" y2="480" stroke="#00d4ff" stroke-width="0.5"/>
+        <circle cx="60"  cy="60"  r="6"  fill="#00d4ff"/>
+        <circle cx="420" cy="60"  r="6"  fill="#8b5cf6"/>
+        <circle cx="60"  cy="420" r="6"  fill="#8b5cf6"/>
+        <circle cx="420" cy="420" r="6"  fill="#00d4ff"/>
         <circle cx="240" cy="240" r="10" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
         <circle cx="240" cy="240" r="4"  fill="#00d4ff"/>
-        <line x1="140" y1="140" x2="200" y2="200" stroke="#8b5cf6" stroke-width="0.6"/>
-        <line x1="340" y1="140" x2="280" y2="200" stroke="#8b5cf6" stroke-width="0.6"/>
-        <line x1="140" y1="340" x2="200" y2="280" stroke="#8b5cf6" stroke-width="0.6"/>
-        <line x1="340" y1="340" x2="280" y2="280" stroke="#8b5cf6" stroke-width="0.6"/>
-        <circle cx="140" cy="140" r="5" fill="none" stroke="#8b5cf6" stroke-width="1"/>
-        <circle cx="340" cy="140" r="5" fill="none" stroke="#8b5cf6" stroke-width="1"/>
-        <circle cx="140" cy="340" r="5" fill="none" stroke="#8b5cf6" stroke-width="1"/>
-        <circle cx="340" cy="340" r="5" fill="none" stroke="#8b5cf6" stroke-width="1"/>
+        <line x1="150" y1="150" x2="200" y2="200" stroke="#8b5cf6" stroke-width="0.6"/>
+        <line x1="330" y1="150" x2="280" y2="200" stroke="#8b5cf6" stroke-width="0.6"/>
+        <line x1="150" y1="330" x2="200" y2="280" stroke="#8b5cf6" stroke-width="0.6"/>
+        <line x1="330" y1="330" x2="280" y2="280" stroke="#8b5cf6" stroke-width="0.6"/>
       </svg>
 
       <div class="container">
         <div class="hero-content">
-
-          <!-- Status badge -->
-          <div class="hero-badge" role="status">
+          <div class="hero-badge">
             <span class="dot" aria-hidden="true"></span>
-            Digital Transformation Experts
+            Trusted Technology Partner Across Africa
           </div>
 
-          <!-- Main headline -->
-          <h1 class="hero-title" id="hero-heading">
-            Turn Your Business Into a<br />
-            <span class="text-gradient">Digital Powerhouse</span>
+          <h1 class="hero-title-caps" id="hero-heading">
+            Redefine What Your<br />
+            Business Can <span class="text-gradient">Achieve</span>
           </h1>
 
-          <!-- Animated tagline line -->
-          <p class="hero-subtitle">
-            We help SMEs and enterprises automate, digitize, and scale.
-            Your business, <span id="hero-typed" aria-live="polite" style="color:var(--color-accent-cyan);font-weight:600;">Digitized.</span>
+          <p class="hero-body-text">
+            The digital economy evolves fast. Make sure you lead it.<br />
+            Mykrotech Etherworx delivers cloud, cybersecurity, networking, software, and digital transformation solutions that turn technology into your most powerful competitive advantage.
           </p>
 
-          <!-- CTA buttons -->
           <div class="hero-cta-row">
-            <a href="#contact" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-              Start Your Journey
-            </a>
-            <a href="#portfolio" class="btn btn-ghost btn-lg">
-              View Our Work
+            <a href="#methodology" class="btn btn-primary btn-lg">
+              See How We Deliver
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
+            <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
           </div>
 
           <!-- Stats strip -->
           <div class="hero-stats" role="region" aria-label="Company statistics">
             <div class="stat-item">
-              <span class="stat-number" data-target="200" data-suffix="+" aria-label="200 plus clients served">0+</span>
+              <span class="stat-number" data-target="200" data-suffix="+" aria-label="200 plus clients">0+</span>
               <span class="stat-label">Clients Served</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="350" data-suffix="+" aria-label="350 plus projects completed">0+</span>
-              <span class="stat-label">Projects Completed</span>
+              <span class="stat-number" data-target="350" data-suffix="+" aria-label="350 plus projects">0+</span>
+              <span class="stat-label">Projects Delivered</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="5" data-suffix="+" aria-label="5 plus years of experience">0+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-number" data-target="6" data-suffix="+" aria-label="6 plus training tracks">0+</span>
+              <span class="stat-label">Training Tracks</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="99.9" data-suffix="%" data-float="true" aria-label="99.9 percent uptime guarantee">0%</span>
+              <span class="stat-number" data-target="99.9" data-suffix="%" data-float="true" aria-label="99.9 percent uptime">0%</span>
               <span class="stat-label">Uptime Guarantee</span>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- Scroll indicator -->
       <div class="scroll-indicator" aria-hidden="true">
         <span>Scroll</span>
         <i class="fa-solid fa-chevron-down"></i>
       </div>
-
     </section>
 
-    <!-- ============================================================
-         SECTION 2 — ABOUT
-         ============================================================ -->
-    <section id="about" aria-labelledby="about-heading">
+    <!-- ═══════════════════════════════════════════════════════
+         2. UPCOMING TRAINING PROGRAMS
+         ═══════════════════════════════════════════════════════ -->
+    <section id="training" aria-labelledby="training-heading">
       <div class="container">
-
-        <!-- Story + Mission/Vision grid -->
-        <div class="about-grid">
-
-          <!-- Left: text -->
-          <div class="about-text" data-reveal>
-            <div class="section-badge">[ Our Story ]</div>
-            <h2 id="about-heading">Built on a Mission to <span class="text-gradient">Digitize Africa's Future</span></h2>
-            <p>
-              Mykrotech Etherworx Services Ltd was founded with a clear mandate: bridge the gap between where businesses are and where technology can take them. We saw too many ambitious companies held back by outdated manual processes, fragile infrastructure, and disconnected systems.
-            </p>
-            <p>
-              Today, we are a full-service technology partner trusted by startups, SMEs, and enterprises across the continent. From cloud infrastructure that scales on demand to mobile apps that delight customers — we engineer solutions that drive measurable business outcomes.
-            </p>
-          </div>
-
-          <!-- Right: Mission + Vision cards -->
-          <div class="mission-vision" data-reveal data-delay="2">
-            <div class="glass-card mv-card">
-              <span class="mv-icon" aria-hidden="true">🎯</span>
-              <h3>Our Mission</h3>
-              <p>To empower every business — regardless of size — with world-class technology that automates operations, reduces costs, and unlocks growth at scale.</p>
-            </div>
-            <div class="glass-card mv-card">
-              <span class="mv-icon" aria-hidden="true">🌍</span>
-              <h3>Our Vision</h3>
-              <p>A continent where every enterprise runs on smart, secure, and connected digital infrastructure — making Africa a global technology powerhouse.</p>
-            </div>
-          </div>
-
+        <div class="section-header">
+          <div class="section-badge">[ Learning & Development ]</div>
+          <h2 id="training-heading">Upcoming <span class="text-gradient">Training Programs</span></h2>
+          <p>Build career-defining skills with instructor-led, hands-on programs designed for professionals at every level. <a href="learning.html" style="color:var(--color-accent-cyan);font-weight:600;">View all programs →</a></p>
         </div>
 
-        <!-- Core values -->
-        <div class="values-grid" role="list" aria-label="Core values">
-          <div class="glass-card value-card" role="listitem" data-reveal data-delay="1">
-            <div class="value-icon" aria-hidden="true">⚡</div>
-            <h4>Innovation First</h4>
-            <p>We embrace emerging technology and challenge conventional thinking to deliver solutions that are ahead of the curve.</p>
-          </div>
-          <div class="glass-card value-card" role="listitem" data-reveal data-delay="2">
-            <div class="value-icon" aria-hidden="true">🛡️</div>
-            <h4>Uncompromising Security</h4>
-            <p>Security isn't an add-on. It's baked into every layer of every solution we design and deploy for our clients.</p>
-          </div>
-          <div class="glass-card value-card" role="listitem" data-reveal data-delay="3">
-            <div class="value-icon" aria-hidden="true">🤝</div>
-            <h4>Client Partnership</h4>
-            <p>We don't just deliver projects — we invest in your success. Your goals become our goals from day one.</p>
-          </div>
-          <div class="glass-card value-card" role="listitem" data-reveal data-delay="4">
-            <div class="value-icon" aria-hidden="true">📊</div>
-            <h4>Results-Driven</h4>
-            <p>Every decision is anchored in measurable impact. We build and iterate until the numbers confirm the strategy works.</p>
-          </div>
-        </div>
+        <div class="training-grid" role="list">
 
-        <!-- Team section -->
-        <div class="team-section">
-          <h3 data-reveal>Meet the <span class="text-gradient">Minds Behind the Work</span></h3>
-          <p data-reveal>A diverse team of engineers, designers, and strategists united by one goal — your digital success.</p>
-          <div class="team-grid" role="list">
-            <div class="glass-card team-card" role="listitem" data-reveal data-delay="1">
-              <div class="team-avatar" aria-hidden="true">AO</div>
-              <h4>Adaeze Okonkwo</h4>
-              <span class="role">CEO &amp; Co-Founder</span>
-              <span class="bio">Cloud architect with 12 years transforming enterprise infrastructure across West Africa.</span>
+          <!-- Training 1 -->
+          <article class="training-card" role="listitem" data-reveal data-delay="1">
+            <div class="training-card-top"></div>
+            <div class="training-card-body">
+              <span class="training-date-tag">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Starting July 7, 2026
+              </span>
+              <h3>Cloud Architecture &amp; AWS/Azure Certification Prep</h3>
+              <p>Master cloud infrastructure design, multi-cloud strategy, cost optimisation, and prepare for AWS Solutions Architect &amp; Azure AZ-900 certifications.</p>
+              <div class="training-badges">
+                <span class="training-badge"><i class="fa-regular fa-clock"></i> 8 Weeks</span>
+                <span class="training-badge"><i class="fa-solid fa-signal"></i> Intermediate</span>
+                <span class="training-badge"><i class="fa-solid fa-globe"></i> Live Online</span>
+              </div>
+              <div class="training-price">₦150,000</div>
             </div>
-            <div class="glass-card team-card" role="listitem" data-reveal data-delay="2">
-              <div class="team-avatar" aria-hidden="true">CE</div>
-              <h4>Chukwuemeka Eze</h4>
-              <span class="role">CTO &amp; Co-Founder</span>
-              <span class="bio">Full-stack engineer and cybersecurity specialist. Former tech lead at two unicorn startups.</span>
+            <div class="training-card-footer">
+              <a href="learning.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              <a href="learning.html" class="service-link" style="font-size:0.875rem;">Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <div class="glass-card team-card" role="listitem" data-reveal data-delay="3">
-              <div class="team-avatar" aria-hidden="true">FA</div>
-              <h4>Fatimah Adeyemi</h4>
-              <span class="role">Head of Design</span>
-              <span class="bio">UX-led product designer who has shipped digital experiences used by over 2 million users.</span>
-            </div>
-            <div class="glass-card team-card" role="listitem" data-reveal data-delay="4">
-              <div class="team-avatar" aria-hidden="true">BI</div>
-              <h4>Babatunde Idris</h4>
-              <span class="role">Head of Cybersecurity</span>
-              <span class="bio">Certified ethical hacker and security consultant protecting clients from emerging threats.</span>
-            </div>
-          </div>
-        </div>
+          </article>
 
+          <!-- Training 2 -->
+          <article class="training-card" role="listitem" data-reveal data-delay="2">
+            <div class="training-card-top"></div>
+            <div class="training-card-body">
+              <span class="training-date-tag">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Starting July 21, 2026
+              </span>
+              <h3>Full-Stack Web Development Bootcamp</h3>
+              <p>Go from zero to job-ready full-stack developer. Covers HTML/CSS/JS, React, Node.js, PostgreSQL, RESTful APIs, Git, and deployment on cloud platforms.</p>
+              <div class="training-badges">
+                <span class="training-badge"><i class="fa-regular fa-clock"></i> 12 Weeks</span>
+                <span class="training-badge"><i class="fa-solid fa-signal"></i> Beginner–Advanced</span>
+                <span class="training-badge"><i class="fa-solid fa-location-dot"></i> In-Person + Online</span>
+              </div>
+              <div class="training-price">₦200,000</div>
+            </div>
+            <div class="training-card-footer">
+              <a href="learning.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              <a href="learning.html" class="service-link" style="font-size:0.875rem;">Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Training 3 -->
+          <article class="training-card" role="listitem" data-reveal data-delay="3">
+            <div class="training-card-top"></div>
+            <div class="training-card-body">
+              <span class="training-date-tag">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Starting August 4, 2026
+              </span>
+              <h3>Digital Transformation Strategy for Business Leaders</h3>
+              <p>A practical executive program covering how to lead digital change, evaluate technology investments, build digital teams, and measure transformation ROI.</p>
+              <div class="training-badges">
+                <span class="training-badge"><i class="fa-regular fa-clock"></i> 4 Weeks</span>
+                <span class="training-badge"><i class="fa-solid fa-signal"></i> All Levels</span>
+                <span class="training-badge"><i class="fa-solid fa-globe"></i> Live Online</span>
+              </div>
+              <div class="training-price">₦180,000</div>
+            </div>
+            <div class="training-card-footer">
+              <a href="learning.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              <a href="learning.html" class="service-link" style="font-size:0.875rem;">Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3 — SERVICES
-         ============================================================ -->
+    <!-- ═══════════════════════════════════════════════════════
+         3. INSIGHTS HUB (Featured Articles)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="insights" aria-labelledby="insights-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">[ Insights Hub ]</div>
+          <h2 id="insights-heading">Ideas That <span class="text-gradient">Drive Industry Forward</span></h2>
+          <p>Expert perspectives on AI, cloud strategy, cybersecurity, digital ecosystems, and the technology reshaping every industry.</p>
+        </div>
+
+        <div class="insights-grid" role="list">
+
+          <!-- Article 1 — Banking & Finance -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="1">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-1" aria-hidden="true">🏦</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Banking &amp; Finance</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>How AI Is Reshaping Financial Services Across Africa</h3>
+              <p>As African banks adopt AI-driven credit scoring, fraud detection, and algorithmic investment strategies, early movers are compressing processing times from days to milliseconds.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Article 2 — Digital Ecosystems -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="2">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-2" aria-hidden="true">🔗</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Digital Ecosystems</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>The Connected Customer: Why Integrated Digital Experiences Drive Revenue</h3>
+              <p>Customers no longer interact with brands in isolation. They expect seamless, personalised experiences across every touchpoint — and they leave when they don't get it.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Article 3 — Innovation -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="3">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-3" aria-hidden="true">🤖</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Innovation</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>AI Copilots and Autonomous Agents: A New Era of Business Productivity</h3>
+              <p>The shift from AI as a tool to AI as a collaborator is accelerating. Here's how intelligent agents are transforming enterprise workflows and decision-making.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Article 4 — Data & AI -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="1">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-4" aria-hidden="true">📊</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Data &amp; AI</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>Unifying Data and AI: Why a Modern Data Platform Is Your Competitive Moat</h3>
+              <p>Fragmented data remains the number-one barrier to AI adoption. A unified data fabric connecting warehouses, lakes, and real-time streams changes everything.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Article 5 — Healthcare -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="2">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-5" aria-hidden="true">🏥</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Healthcare</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>Digitizing Healthcare in Nigeria: Technology's Role in Better Patient Outcomes</h3>
+              <p>Interoperability standards and digital health records are enabling secure, patient-centric data exchange across Nigeria's historically fragmented health system.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <!-- Article 6 — Governance -->
+          <article class="insight-card" role="listitem" data-reveal data-delay="3">
+            <div class="insight-thumb">
+              <div class="insight-thumb-inner ithumb-6" aria-hidden="true">🛡️</div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-meta">
+                <span class="insight-category">Governance</span>
+                <span class="insight-date">May 22, 2026</span>
+              </div>
+              <h3>Cybersecurity in 2026: Why Adaptive Defense Is the Only Viable Strategy</h3>
+              <p>Static perimeter defences have failed. Zero-trust architecture, AI-driven threat detection, and continuous compliance monitoring are now the baseline for serious enterprise security.</p>
+              <a href="blog-post.html" class="insight-link">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:48px;" data-reveal>
+          <a href="blog.html" class="btn btn-ghost">
+            View All Insights <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         4. WHO WE ARE — Accordion
+         ═══════════════════════════════════════════════════════ -->
+    <section id="who-we-are" aria-labelledby="who-heading">
+      <div class="container">
+        <div class="who-grid">
+
+          <div class="who-text" data-reveal>
+            <div class="section-badge">[ Who We Are ]</div>
+            <h2 id="who-heading">More Than a Vendor — We Are Your <span class="text-gradient">Technology Partner</span></h2>
+            <p>Mykrotech Etherworx Services Ltd was founded to bridge the gap between where businesses are and where technology can take them. Today we are a full-service technology partner trusted by startups, SMEs, and enterprises across Africa.</p>
+            <p>We don't just deliver projects — we invest in your outcomes. Our multidisciplinary team of engineers, architects, designers, and strategists works as an extension of your organisation, bringing enterprise-grade capability to every engagement.</p>
+            <a href="#contact" class="btn btn-primary" style="width:fit-content;margin-top:8px;">
+              Partner With Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div data-reveal data-delay="2">
+            <div class="accordion-list" role="list" aria-label="About Mykrotech Etherworx">
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-trigger" aria-expanded="true" aria-controls="acc-mission">
+                  Our Mission
+                  <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                </button>
+                <div class="accordion-body open" id="acc-mission">
+                  <div class="accordion-body-inner">
+                    To empower every business — regardless of size — with world-class technology that automates operations, reduces costs, and unlocks growth at scale. We believe digital transformation is not a luxury; it is the foundation of every competitive business in the 21st century.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-vision">
+                  Our Vision
+                  <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                </button>
+                <div class="accordion-body" id="acc-vision">
+                  <div class="accordion-body-inner">
+                    A continent where every enterprise runs on smart, secure, and connected digital infrastructure — making Africa a global technology powerhouse and positioning Nigerian businesses as world-class operators on the international stage.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-values">
+                  Core Values
+                  <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                </button>
+                <div class="accordion-body" id="acc-values">
+                  <div class="accordion-body-inner">
+                    <strong style="color:var(--color-text-primary)">Innovation First</strong> — We challenge conventions and adopt emerging technologies to stay ahead of the curve.<br /><br />
+                    <strong style="color:var(--color-text-primary)">Uncompromising Security</strong> — Security is built into every layer of every solution, not bolted on at the end.<br /><br />
+                    <strong style="color:var(--color-text-primary)">Client Partnership</strong> — Your goals become our goals. We measure our success by your outcomes, not our outputs.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-diff">
+                  What Makes Us Different
+                  <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                </button>
+                <div class="accordion-body" id="acc-diff">
+                  <div class="accordion-body-inner">
+                    We combine deep technical expertise with genuine business acumen. Every solution we propose is benchmarked against real business outcomes — revenue growth, cost reduction, operational efficiency. We don't recommend technology for its own sake; we recommend it when we can clearly demonstrate the return on your investment.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         5. METHODOLOGY — 01 / 02 / 03
+         ═══════════════════════════════════════════════════════ -->
+    <section id="methodology" aria-labelledby="method-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">[ How We Work ]</div>
+          <h2 id="method-heading">A Proven Process for <span class="text-gradient">Delivering Results</span></h2>
+          <p>Every engagement follows a disciplined three-phase methodology that ensures we understand your business before we write a single line of code.</p>
+        </div>
+
+        <div class="methodology-grid" role="list">
+
+          <div class="method-card glass-card" role="listitem" data-reveal data-delay="1">
+            <span class="method-number" aria-hidden="true">01</span>
+            <div class="method-icon" aria-hidden="true">🔍</div>
+            <h3>Discover</h3>
+            <p>We begin with a deep-dive into your business — processes, pain points, goals, and existing technology landscape. No assumptions. No pre-packaged solutions. Just honest discovery and strategic listening.</p>
+          </div>
+
+          <div class="method-card glass-card" role="listitem" data-reveal data-delay="2">
+            <span class="method-number" aria-hidden="true">02</span>
+            <div class="method-icon" aria-hidden="true">✏️</div>
+            <h3>Design</h3>
+            <p>Our architects and designers translate discovery findings into a tailored solution blueprint — with clear deliverables, technology choices, timelines, and a measurable success framework agreed upfront.</p>
+          </div>
+
+          <div class="method-card glass-card" role="listitem" data-reveal data-delay="3">
+            <span class="method-number" aria-hidden="true">03</span>
+            <div class="method-icon" aria-hidden="true">🚀</div>
+            <h3>Deploy</h3>
+            <p>We build, test, and deploy with agile precision — then provide comprehensive training, documentation, and ongoing managed support to ensure your investment delivers long-term value.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         6. SERVICES GRID
+         ═══════════════════════════════════════════════════════ -->
     <section id="services" aria-labelledby="services-heading">
       <div class="container">
-
         <div class="section-header">
           <div class="section-badge">[ What We Do ]</div>
           <h2 id="services-heading">Comprehensive Tech Solutions for <span class="text-gradient">Every Business Need</span></h2>
-          <p>Whether you need to migrate to the cloud, secure your network, or build a world-class app — we have the expertise to deliver it end-to-end.</p>
+          <p>End-to-end technology services that cover every layer of your digital infrastructure — from the network up to the user interface.</p>
         </div>
 
         <div class="services-grid" role="list">
 
-          <!-- Cloud Computing -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="1">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(0,212,255,0.08)"/>
@@ -325,24 +494,21 @@
               <path d="M28 36v6m-4-3h8" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
             <h3>Cloud Computing</h3>
-            <p>Scalable, resilient cloud infrastructure tailored to your workloads. We handle migration, architecture, and ongoing management — so you focus on your business.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about Cloud Computing">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>Scalable, resilient cloud infrastructure. Migration, architecture design, multi-cloud management, and FinOps optimisation — so you scale without surprises.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
-          <!-- IT Consulting -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="2">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(139,92,246,0.08)"/>
               <circle cx="28" cy="22" r="8" stroke="#8b5cf6" stroke-width="1.8"/>
               <path d="M28 30v4m-8 4a8 8 0 0 1 16 0" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M36 18l3-3m-22 3l-3-3" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
             <h3>IT Consulting</h3>
-            <p>Strategic technology advice that aligns your IT investments with business objectives. From audits to full digital roadmaps — we show you the path and walk it with you.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about IT Consulting">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>Strategic technology advice that aligns your IT investments with business objectives. Digital roadmaps, tech audits, vendor selection, and transformation planning.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
-          <!-- Networking -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="3">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(0,212,255,0.08)"/>
@@ -357,11 +523,10 @@
               <line x1="39" y1="37" x2="31" y2="30" stroke="#8b5cf6" stroke-width="1.2"/>
             </svg>
             <h3>Networking</h3>
-            <p>Enterprise-grade network design, installation, and managed services. We build fast, reliable, and secure network foundations that keep your operations running without interruption.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about Networking">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>Enterprise-grade network design, installation, and managed services. We build fast, reliable, and secure foundations that keep your operations running without interruption.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
-          <!-- Cybersecurity -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="4">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(139,92,246,0.08)"/>
@@ -369,26 +534,22 @@
               <path d="M22 28l4 4 8-8" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <h3>Cybersecurity</h3>
-            <p>Comprehensive threat detection, vulnerability assessments, compliance frameworks, and incident response. We protect your data, systems, and reputation from modern cyber threats.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about Cybersecurity">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>Threat detection, vulnerability assessments, compliance frameworks (ISO 27001, NDPR), and incident response — protecting your data, systems, and business reputation.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
-          <!-- Software Development -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="5">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(0,212,255,0.08)"/>
               <rect x="12" y="16" width="32" height="24" rx="4" stroke="#00d4ff" stroke-width="1.8"/>
               <path d="M22 26l-4 2 4 2m12-4l4 2-4 2" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M27 24l-2 8" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M16 44h24" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M28 40v4" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
             <h3>Software Development</h3>
-            <p>Custom web applications, enterprise systems, APIs, and third-party integrations built to spec. We write clean, scalable code that solves real business problems and grows with you.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about Software Development">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>Custom web applications, enterprise platforms, APIs, and integrations built to spec. Clean, scalable code that solves real business problems and grows with you.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
-          <!-- Digital Solutions & Apps -->
           <div class="glass-card service-card" role="listitem" data-reveal data-delay="6">
             <svg class="service-icon" aria-hidden="true" viewBox="0 0 56 56" fill="none">
               <rect width="56" height="56" rx="12" fill="rgba(139,92,246,0.08)"/>
@@ -397,313 +558,290 @@
               <rect x="30" y="18" width="12" height="18" rx="2.5" stroke="#00d4ff" stroke-width="1.5"/>
               <line x1="32" y1="22" x2="40" y2="22" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
               <line x1="32" y1="25" x2="40" y2="25" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="32" y1="28" x2="37" y2="28" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
             </svg>
             <h3>Digital Solutions &amp; Apps</h3>
-            <p>iOS, Android, and cross-platform mobile apps. Progressive Web Apps. Customer portals. E-commerce platforms. We build digital products that users love and businesses rely on.</p>
-            <a href="#contact" class="service-link" aria-label="Learn more about Digital Solutions and Apps">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <p>iOS, Android, and cross-platform mobile apps. Progressive Web Apps. Customer portals. E-commerce platforms. We build digital products users love and businesses rely on.</p>
+            <a href="#contact" class="service-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 4 — PORTFOLIO
-         ============================================================ -->
+    <!-- ═══════════════════════════════════════════════════════
+         7. PORTFOLIO
+         ═══════════════════════════════════════════════════════ -->
     <section id="portfolio" aria-labelledby="portfolio-heading">
       <div class="container">
-
         <div class="section-header">
           <div class="section-badge">[ Our Work ]</div>
           <h2 id="portfolio-heading">Proof in <span class="text-gradient">Every Project</span></h2>
-          <p>Real solutions built for real businesses. Browse our portfolio by category to see how we've helped clients across industries transform their operations.</p>
+          <p>Real solutions, real clients, measurable results. Filter by category to explore our portfolio.</p>
         </div>
 
-        <!-- Filter tabs -->
-        <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
-          <button class="filter-btn active" data-filter="all"      role="tab" aria-selected="true">All Projects</button>
+        <div class="portfolio-filters" role="tablist" aria-label="Filter by category">
+          <button class="filter-btn active" data-filter="all"      role="tab" aria-selected="true">All</button>
           <button class="filter-btn"        data-filter="web"      role="tab" aria-selected="false">Web</button>
           <button class="filter-btn"        data-filter="mobile"   role="tab" aria-selected="false">Mobile</button>
           <button class="filter-btn"        data-filter="cloud"    role="tab" aria-selected="false">Cloud</button>
           <button class="filter-btn"        data-filter="security" role="tab" aria-selected="false">Security</button>
         </div>
 
-        <!-- Project grid -->
         <div class="portfolio-grid-wrapper">
-          <div class="portfolio-grid" role="list" aria-label="Portfolio projects">
+          <div class="portfolio-grid" role="list">
 
-            <!-- Project 1: EcommerceFlow (Web) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="web"
-              data-thumb-class="thumb-web"
-              data-icon="🛒"
-              data-modal-category="Web Platform"
-              data-modal-title="EcommerceFlow Platform"
-              data-modal-desc="A fully headless e-commerce platform built for a multi-vendor retail network with 50,000+ SKUs. Features real-time inventory sync, dynamic pricing, payment gateway integration (Paystack, Flutterwave), and a vendor analytics dashboard. Reduced checkout abandonment by 38% post-launch."
-              data-stack='["React","Node.js","PostgreSQL","Redis","Paystack API","AWS S3"]'
-              aria-label="View EcommerceFlow Platform project details">
-              <div class="project-thumb thumb-web">
-                <div class="thumb-icon" aria-hidden="true">🛒</div>
-              </div>
+            <article class="portfolio-card" role="listitem" data-category="web"
+              data-thumb-class="thumb-web" data-icon="🛒"
+              data-modal-category="Web Platform" data-modal-title="EcommerceFlow Platform"
+              data-modal-desc="Multi-vendor retail platform with real-time inventory sync, dynamic pricing, and integrated Paystack/Flutterwave payments. Reduced checkout abandonment by 38%."
+              data-stack='["React","Node.js","PostgreSQL","Redis","Paystack","AWS S3"]'
+              aria-label="View EcommerceFlow Platform details">
+              <div class="project-thumb thumb-web"><div class="thumb-icon" aria-hidden="true">🛒</div></div>
               <div class="project-body">
                 <p class="project-category">Web Platform</p>
                 <h3>EcommerceFlow Platform</h3>
-                <p>Multi-vendor retail platform with real-time inventory and integrated payments.</p>
+                <p>Multi-vendor retail with real-time inventory and integrated payments.</p>
               </div>
             </article>
 
-            <!-- Project 2: SecureVault App (Security) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="security"
-              data-thumb-class="thumb-security"
-              data-icon="🔐"
-              data-modal-category="Cybersecurity"
-              data-modal-title="SecureVault Credential Manager"
-              data-modal-desc="An enterprise-grade credentials and secrets manager built for a financial services firm managing 300+ API keys, certificates, and database credentials. AES-256 encrypted at rest, zero-trust access model, full audit trail, and automated rotation schedules. Passed ISO 27001 audit with zero findings."
+            <article class="portfolio-card" role="listitem" data-category="security"
+              data-thumb-class="thumb-security" data-icon="🔐"
+              data-modal-category="Cybersecurity" data-modal-title="SecureVault Credential Manager"
+              data-modal-desc="Enterprise secrets manager with AES-256 encryption, zero-trust access model, full audit trail, and automated rotation. Passed ISO 27001 audit with zero findings."
               data-stack='["Python","FastAPI","Vault","PostgreSQL","Docker","Kubernetes"]'
-              aria-label="View SecureVault Credential Manager project details">
-              <div class="project-thumb thumb-security">
-                <div class="thumb-icon" aria-hidden="true">🔐</div>
-              </div>
+              aria-label="View SecureVault Credential Manager details">
+              <div class="project-thumb thumb-security"><div class="thumb-icon" aria-hidden="true">🔐</div></div>
               <div class="project-body">
                 <p class="project-category">Cybersecurity</p>
                 <h3>SecureVault Credential Manager</h3>
-                <p>Zero-trust secrets management with AES-256 encryption and automated rotation.</p>
+                <p>Zero-trust secrets management with AES-256 and automated rotation.</p>
               </div>
             </article>
 
-            <!-- Project 3: CloudSync Dashboard (Cloud) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="cloud"
-              data-thumb-class="thumb-cloud"
-              data-icon="☁️"
-              data-modal-category="Cloud Infrastructure"
-              data-modal-title="CloudSync Operations Dashboard"
-              data-modal-desc="A unified multi-cloud management dashboard for a logistics company running workloads across AWS, Azure, and GCP. Provides real-time cost analytics, resource utilisation charts, auto-scaling controls, and incident alerting — saving the client over ₦4.2M monthly in cloud waste through automated right-sizing."
-              data-stack='["Vue.js","Python","AWS SDK","Azure SDK","GCP SDK","Prometheus","Grafana"]'
-              aria-label="View CloudSync Operations Dashboard project details">
-              <div class="project-thumb thumb-cloud">
-                <div class="thumb-icon" aria-hidden="true">☁️</div>
-              </div>
+            <article class="portfolio-card" role="listitem" data-category="cloud"
+              data-thumb-class="thumb-cloud" data-icon="☁️"
+              data-modal-category="Cloud Infrastructure" data-modal-title="CloudSync Operations Dashboard"
+              data-modal-desc="Unified multi-cloud management dashboard saving ₦4.2M monthly in cloud waste through automated right-sizing across AWS, Azure, and GCP."
+              data-stack='["Vue.js","Python","AWS SDK","Azure SDK","GCP SDK","Prometheus"]'
+              aria-label="View CloudSync Operations Dashboard details">
+              <div class="project-thumb thumb-cloud"><div class="thumb-icon" aria-hidden="true">☁️</div></div>
               <div class="project-body">
                 <p class="project-category">Cloud Infrastructure</p>
                 <h3>CloudSync Operations Dashboard</h3>
-                <p>Multi-cloud management platform with real-time cost analytics and auto-scaling.</p>
+                <p>Multi-cloud management saving ₦4.2M monthly in cloud waste.</p>
               </div>
             </article>
 
-            <!-- Project 4: FieldForce Mobile (Mobile) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="mobile"
-              data-thumb-class="thumb-mobile"
-              data-icon="📱"
-              data-modal-category="Mobile Application"
-              data-modal-title="FieldForce Field Operations App"
-              data-modal-desc="A cross-platform mobile app (iOS + Android) for a telecoms company's 600-strong field engineering team. Features offline-first data sync, GPS job routing, photo/video evidence capture, digital work-order completion, and manager dashboards. Reduced job turnaround time by 55% in the first quarter post-rollout."
+            <article class="portfolio-card" role="listitem" data-category="mobile"
+              data-thumb-class="thumb-mobile" data-icon="📱"
+              data-modal-category="Mobile Application" data-modal-title="FieldForce Operations App"
+              data-modal-desc="Offline-first field operations app for 600 telecoms engineers — GPS routing, digital work orders, photo evidence. Reduced job turnaround by 55%."
               data-stack='["React Native","Expo","SQLite","Node.js","Google Maps API","Firebase"]'
-              aria-label="View FieldForce Field Operations App project details">
-              <div class="project-thumb thumb-mobile">
-                <div class="thumb-icon" aria-hidden="true">📱</div>
-              </div>
+              aria-label="View FieldForce Operations App details">
+              <div class="project-thumb thumb-mobile"><div class="thumb-icon" aria-hidden="true">📱</div></div>
               <div class="project-body">
                 <p class="project-category">Mobile Application</p>
                 <h3>FieldForce Operations App</h3>
-                <p>Offline-first field operations app used by 600+ engineers with GPS routing.</p>
+                <p>Offline-first app for 600+ field engineers — reduced turnaround by 55%.</p>
               </div>
             </article>
 
-            <!-- Project 5: Netwatch Manager (Cloud) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="cloud"
-              data-thumb-class="thumb-cloud"
-              data-icon="🌐"
-              data-modal-category="Network Management"
-              data-modal-title="Netwatch Network Manager"
-              data-modal-desc="A cloud-hosted network performance monitoring and management platform for an ISP managing over 1,200 edge nodes. Provides real-time bandwidth charts, automated fault detection, configuration backups, and SLA reporting. Reduced mean time to detect (MTTD) network faults from 45 minutes to under 4 minutes."
-              data-stack='["Angular","Django","InfluxDB","SNMP","Celery","RabbitMQ","AWS"]'
-              aria-label="View Netwatch Network Manager project details">
-              <div class="project-thumb thumb-cloud">
-                <div class="thumb-icon" aria-hidden="true">🌐</div>
-              </div>
-              <div class="project-body">
-                <p class="project-category">Network Management</p>
-                <h3>Netwatch Network Manager</h3>
-                <p>Cloud-hosted monitoring platform for 1,200+ edge nodes with fault auto-detection.</p>
-              </div>
-            </article>
-
-            <!-- Project 6: PayLink Portal (Web) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="web"
-              data-thumb-class="thumb-web"
-              data-icon="💳"
-              data-modal-category="Web Application"
-              data-modal-title="PayLink B2B Payments Portal"
-              data-modal-desc="A web-based B2B payments and invoicing portal for a manufacturing firm processing ₦800M+ in monthly transactions. Built with a double-entry accounting engine, multi-currency support, automated reconciliation, and real-time treasury dashboards. Eliminated manual reconciliation errors entirely and saved 40+ finance team hours weekly."
-              data-stack='["Next.js","TypeScript","Prisma","PostgreSQL","Flutterwave","Sendgrid"]'
-              aria-label="View PayLink B2B Payments Portal project details">
-              <div class="project-thumb thumb-web">
-                <div class="thumb-icon" aria-hidden="true">💳</div>
-              </div>
+            <article class="portfolio-card" role="listitem" data-category="web"
+              data-thumb-class="thumb-web" data-icon="💳"
+              data-modal-category="Web Application" data-modal-title="PayLink B2B Payments Portal"
+              data-modal-desc="B2B payments and invoicing portal processing ₦800M+ monthly. Double-entry accounting engine, multi-currency support, automated reconciliation."
+              data-stack='["Next.js","TypeScript","Prisma","PostgreSQL","Flutterwave","SendGrid"]'
+              aria-label="View PayLink B2B Payments Portal details">
+              <div class="project-thumb thumb-web"><div class="thumb-icon" aria-hidden="true">💳</div></div>
               <div class="project-body">
                 <p class="project-category">Web Application</p>
                 <h3>PayLink B2B Payments Portal</h3>
-                <p>High-volume invoicing and reconciliation platform processing ₦800M+ monthly.</p>
+                <p>High-volume invoicing platform processing ₦800M+ monthly.</p>
               </div>
             </article>
 
-            <!-- Project 7: ShieldSense SIEM (Security) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="security"
-              data-thumb-class="thumb-security"
-              data-icon="🛡️"
-              data-modal-category="Cybersecurity"
-              data-modal-title="ShieldSense SIEM Platform"
-              data-modal-desc="A custom Security Information and Event Management (SIEM) platform built for a Nigerian bank with 2 million+ customer accounts. Aggregates logs from 80+ sources, uses ML-based anomaly detection to flag suspicious activity, and provides a 24/7 SOC analyst dashboard. Detected and neutralised a live credential-stuffing attack within 6 minutes of ingestion."
+            <article class="portfolio-card" role="listitem" data-category="security"
+              data-thumb-class="thumb-security" data-icon="🛡️"
+              data-modal-category="Cybersecurity" data-modal-title="ShieldSense SIEM Platform"
+              data-modal-desc="Custom SIEM platform for a Nigerian bank — ML anomaly detection across 80+ log sources. Detected and neutralised a live credential-stuffing attack in 6 minutes."
               data-stack='["Elasticsearch","Kibana","Python","Kafka","TensorFlow Lite","Redis"]'
-              aria-label="View ShieldSense SIEM Platform project details">
-              <div class="project-thumb thumb-security">
-                <div class="thumb-icon" aria-hidden="true">🛡️</div>
-              </div>
+              aria-label="View ShieldSense SIEM Platform details">
+              <div class="project-thumb thumb-security"><div class="thumb-icon" aria-hidden="true">🛡️</div></div>
               <div class="project-body">
                 <p class="project-category">Cybersecurity</p>
                 <h3>ShieldSense SIEM Platform</h3>
-                <p>ML-powered threat detection platform aggregating logs from 80+ sources.</p>
-              </div>
-            </article>
-
-            <!-- Project 8: LogiTrack Mobile (Mobile) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="mobile"
-              data-thumb-class="thumb-mobile"
-              data-icon="🚚"
-              data-modal-category="Mobile Application"
-              data-modal-title="LogiTrack Delivery Tracker"
-              data-modal-desc="A consumer + driver-facing mobile app for a last-mile delivery startup. Customers track orders in real time on an interactive map; drivers receive optimised routes, proof-of-delivery prompts, and earnings summaries. The app handled 12,000 daily active users within 3 months of launch with 4.7-star ratings on both app stores."
-              data-stack='["Flutter","Dart","Google Maps SDK","Firebase","Node.js","MongoDB"]'
-              aria-label="View LogiTrack Delivery Tracker project details">
-              <div class="project-thumb thumb-mobile">
-                <div class="thumb-icon" aria-hidden="true">🚚</div>
-              </div>
-              <div class="project-body">
-                <p class="project-category">Mobile Application</p>
-                <h3>LogiTrack Delivery Tracker</h3>
-                <p>Real-time delivery tracking app with 12,000 DAUs and 4.7-star rating.</p>
-              </div>
-            </article>
-
-            <!-- Project 9: DataBridge API (Web) -->
-            <article class="portfolio-card" role="listitem"
-              data-category="web"
-              data-thumb-class="thumb-web"
-              data-icon="🔗"
-              data-modal-category="API Integration"
-              data-modal-title="DataBridge Integration API"
-              data-modal-desc="A central integration API and data pipeline for a healthcare group connecting 7 hospital management systems, an insurance claims platform, a pharmacy POS, and a patient mobile app. Processes 4M+ data events daily with guaranteed delivery, transformation, and compliance with NDPR data residency requirements."
-              data-stack='["Node.js","TypeScript","Apache Kafka","Redis","MySQL","Docker","Nginx"]'
-              aria-label="View DataBridge Integration API project details">
-              <div class="project-thumb thumb-web">
-                <div class="thumb-icon" aria-hidden="true">🔗</div>
-              </div>
-              <div class="project-body">
-                <p class="project-category">API Integration</p>
-                <h3>DataBridge Integration API</h3>
-                <p>Healthcare data pipeline connecting 7 systems, processing 4M+ events daily.</p>
+                <p>ML-powered threat detection across 80+ log sources.</p>
               </div>
             </article>
 
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 5 — BLOG PREVIEW
-         ============================================================ -->
-    <section id="blog-preview" aria-labelledby="blog-heading">
+    <!-- ═══════════════════════════════════════════════════════
+         8. LEADERSHIP QUOTE
+         ═══════════════════════════════════════════════════════ -->
+    <section id="quote-section" aria-label="Leadership quote">
       <div class="container">
-
-        <div class="section-header">
-          <div class="section-badge">[ Insights ]</div>
-          <h2 id="blog-heading">From the <span class="text-gradient">Mykrotech Etherworx</span> Desk</h2>
-          <p>Practical insights on cloud strategy, cybersecurity, digital transformation, and building technology that lasts.</p>
+        <div class="quote-inner" data-reveal>
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <p class="quote-text">
+            Technology is not the destination — it is the road. Our mission at Mykrotech Etherworx is to build that road for every business that dares to think beyond where they are today.
+          </p>
+          <div class="quote-author">
+            <div class="quote-avatar" aria-hidden="true">AO</div>
+            <div class="quote-author-text">
+              <strong>Adaeze Okonkwo</strong>
+              <span>CEO &amp; Co-Founder, Mykrotech Etherworx Services Ltd</span>
+            </div>
+          </div>
         </div>
-
-        <div class="blog-grid" role="list">
-
-          <!-- Blog Card 1 -->
-          <article class="blog-card glass-card" role="listitem" data-reveal data-delay="1">
-            <div class="blog-thumb">
-              <div class="blog-thumb-inner blog-thumb-1" aria-hidden="true">☁️</div>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Cloud Strategy</span>
-                <span class="blog-date">May 28, 2026</span>
-              </div>
-              <h3>Why Your Business Needs a Multi-Cloud Strategy in 2026</h3>
-              <p>Relying on a single cloud provider is a single point of failure. Here's how multi-cloud architecture gives you resilience, cost control, and negotiating power.</p>
-              <a href="blog-post.html" class="blog-read-more" aria-label="Read more: Why Your Business Needs a Multi-Cloud Strategy in 2026">
-                Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-          <!-- Blog Card 2 -->
-          <article class="blog-card glass-card" role="listitem" data-reveal data-delay="2">
-            <div class="blog-thumb">
-              <div class="blog-thumb-inner blog-thumb-2" aria-hidden="true">🛡️</div>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Cybersecurity</span>
-                <span class="blog-date">May 15, 2026</span>
-              </div>
-              <h3>The 5 Cyber Threats SMEs in Africa Face Right Now — and How to Stop Them</h3>
-              <p>Ransomware, credential stuffing, BEC scams — small and medium businesses are the new target. We break down what's happening and what actually works to stop it.</p>
-              <a href="blog-post.html" class="blog-read-more" aria-label="Read more: The 5 Cyber Threats SMEs in Africa Face Right Now">
-                Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-          <!-- Blog Card 3 -->
-          <article class="blog-card glass-card" role="listitem" data-reveal data-delay="3">
-            <div class="blog-thumb">
-              <div class="blog-thumb-inner blog-thumb-3" aria-hidden="true">📱</div>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Digital Transformation</span>
-                <span class="blog-date">Apr 30, 2026</span>
-              </div>
-              <h3>From Paper to Platform: How to Digitize Your Business Operations in 90 Days</h3>
-              <p>A practical, stage-by-stage guide to automating manual workflows, eliminating paper trails, and building a connected digital business — without breaking the bank.</p>
-              <a href="blog-post.html" class="blog-read-more" aria-label="Read more: From Paper to Platform - Digitize in 90 Days">
-                Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="blog-cta" data-reveal>
-          <a href="blog.html" class="btn btn-ghost">
-            View All Articles <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 6 — CONTACT
-         ============================================================ -->
+    <!-- ═══════════════════════════════════════════════════════
+         9. CTA ZONE
+         ═══════════════════════════════════════════════════════ -->
+    <section id="cta-zone" aria-labelledby="cta-heading">
+      <div class="cta-zone-bg" aria-hidden="true"></div>
+      <div class="cta-zone-border" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-zone-inner" data-reveal>
+          <div class="section-badge">[ Start Today ]</div>
+          <h2 id="cta-heading">Ready to <span class="text-gradient">Transform Your Business?</span></h2>
+          <p>Join over 200 businesses across Africa who have trusted Mykrotech Etherworx to digitize, automate, and scale their operations.</p>
+          <div class="cta-btn-row">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+              Start Your Journey
+            </a>
+            <a href="learning.html" class="btn btn-ghost btn-lg">
+              Explore Training Programs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         10. WHY MYKROTECH — 4-col grid
+         ═══════════════════════════════════════════════════════ -->
+    <section id="why-us" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">[ Why Choose Us ]</div>
+          <h2 id="why-heading">Built to <span class="text-gradient">Grow With You</span></h2>
+          <p>Four pillars that define every client engagement at Mykrotech Etherworx — from first conversation to long-term partnership.</p>
+        </div>
+
+        <div class="why-grid" role="list">
+          <div class="why-card" role="listitem" data-reveal data-delay="1">
+            <div class="why-icon" aria-hidden="true">⚡</div>
+            <h4>Fast Delivery</h4>
+            <p>Agile sprints, clear milestones, and no scope creep. We ship on time because our process is built for speed without compromising quality.</p>
+          </div>
+          <div class="why-card" role="listitem" data-reveal data-delay="2">
+            <div class="why-icon" aria-hidden="true">🔒</div>
+            <h4>Security by Design</h4>
+            <p>Every solution we architect has security embedded from the first line — not added as an afterthought. Your data is always protected.</p>
+          </div>
+          <div class="why-card" role="listitem" data-reveal data-delay="3">
+            <div class="why-icon" aria-hidden="true">📈</div>
+            <h4>Measurable ROI</h4>
+            <p>We define success metrics before we start building. If we can't show you the return on your investment, we rethink the approach.</p>
+          </div>
+          <div class="why-card" role="listitem" data-reveal data-delay="4">
+            <div class="why-icon" aria-hidden="true">🤝</div>
+            <h4>Long-term Support</h4>
+            <p>Deployment is not the finish line — it's the starting point. We stay engaged with managed support, optimisation, and strategic guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         11. FAQ
+         ═══════════════════════════════════════════════════════ -->
+    <section id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">[ FAQ ]</div>
+          <h2 id="faq-heading">Questions We <span class="text-gradient">Hear Often</span></h2>
+          <p>Straight answers to the questions business owners ask us most.</p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              How long does a typical project take?
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                It depends on scope. A simple web app or cloud migration can take 6–10 weeks. A complex enterprise platform with integrations typically runs 3–6 months. We provide a detailed project timeline during the Discovery phase — and we stick to it through a structured sprint process with weekly client updates.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              Do you work with small businesses, or only enterprises?
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Both. We work with startups, growing SMEs, and large enterprises. Our service packages are designed to scale — so a 10-person business gets the same quality of thinking and execution as a 500-person organisation, just scoped appropriately to their budget and needs.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              What happens after our project is delivered?
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                We offer tiered managed support contracts covering monitoring, maintenance, security patching, and feature updates. Most clients continue with a monthly retainer. We also provide full documentation and knowledge transfer so your internal team can handle day-to-day operations independently if preferred.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              How do your training programs work?
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Our training programs are instructor-led, cohort-based, and delivered live online or in-person at our Lagos facility. Each program includes hands-on labs, real-world projects, and a certificate of completion. Corporate team training with custom curriculum is also available — contact us to discuss group enrollment.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              Can you integrate with our existing systems?
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Yes — integration is one of our core specialties. We have experience connecting to ERP systems (SAP, Odoo), accounting platforms (QuickBooks, Sage), payment gateways (Paystack, Flutterwave), CRMs, and virtually any system that exposes an API. We audit your existing stack in the Discovery phase and design integrations that preserve your existing workflows while adding new capabilities.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         12. CONTACT
+         ═══════════════════════════════════════════════════════ -->
     <section id="contact" aria-labelledby="contact-heading">
       <div class="container">
-
         <div class="section-header">
           <div class="section-badge">[ Get In Touch ]</div>
           <h2 id="contact-heading">Ready to Start Your <span class="text-gradient">Digital Journey?</span></h2>
@@ -711,39 +849,32 @@
         </div>
 
         <div class="contact-grid">
-
-          <!-- Contact Form -->
           <div class="contact-form-wrapper" data-reveal>
             <h3>Send Us a Message</h3>
-            <p>Fill in the details below and a member of our team will reach out to discuss how we can help.</p>
+            <p>Fill in the details below and our team will reach out to discuss how we can help.</p>
 
             <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
-
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <input type="text" id="name" name="name" placeholder="e.g. Amaka Okafor"
-                    required autocomplete="name" aria-required="true" aria-describedby="name-error" />
-                  <span class="field-error" id="name-error" role="alert"></span>
+                  <input type="text" id="name" name="name" placeholder="e.g. Amaka Okafor" required autocomplete="name" aria-required="true" />
+                  <span class="field-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="email">Email Address <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="you@yourcompany.com"
-                    required autocomplete="email" aria-required="true" aria-describedby="email-error" />
-                  <span class="field-error" id="email-error" role="alert"></span>
+                  <input type="email" id="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email" aria-required="true" />
+                  <span class="field-error" role="alert"></span>
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000"
-                    autocomplete="tel" aria-describedby="phone-error" />
-                  <span class="field-error" id="phone-error" role="alert"></span>
+                  <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" />
+                  <span class="field-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="service">Service Interest <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <select id="service" name="service" required aria-required="true" aria-describedby="service-error">
+                  <select id="service" name="service" required aria-required="true">
                     <option value="">Select a service…</option>
                     <option value="cloud">Cloud Computing</option>
                     <option value="consulting">IT Consulting</option>
@@ -751,145 +882,100 @@
                     <option value="cybersecurity">Cybersecurity</option>
                     <option value="software">Software Development</option>
                     <option value="digital">Digital Solutions &amp; Apps</option>
+                    <option value="training">Training Programs</option>
                   </select>
-                  <span class="field-error" id="service-error" role="alert"></span>
+                  <span class="field-error" role="alert"></span>
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="message">Your Message <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                <textarea id="message" name="message" rows="5"
-                  placeholder="Tell us about your project, goals, or challenge. The more detail, the better we can help."
-                  required aria-required="true" aria-describedby="message-error"></textarea>
-                <span class="field-error" id="message-error" role="alert"></span>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, goals, or challenge." required aria-required="true"></textarea>
+                <span class="field-error" role="alert"></span>
               </div>
-
               <div class="form-submit">
                 <button type="submit" class="btn btn-primary">
                   <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                   Send Message
                 </button>
               </div>
-
             </form>
 
-            <!-- Success message — shown after submit -->
-            <div class="form-success" role="status" aria-live="polite" aria-label="Form submission success">
-              <div class="success-icon" aria-hidden="true">
-                <i class="fa-solid fa-check"></i>
-              </div>
+            <div class="form-success" role="status" aria-live="polite">
+              <div class="success-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               <h3>Message Sent!</h3>
-              <p>Thank you for reaching out. Our team will review your message and get back to you within one business day.</p>
+              <p>Thank you — our team will respond within one business day.</p>
               <a href="#home" class="btn btn-ghost btn-sm">Back to Top</a>
             </div>
           </div>
 
-          <!-- Contact info -->
           <div class="contact-info" data-reveal data-delay="2">
             <h3>Our Details</h3>
-            <p>Prefer to reach out directly? Here's how to find us.</p>
-
+            <p>Prefer direct contact? We're here.</p>
             <div class="glass-card info-card">
-              <div class="info-card-icon" aria-hidden="true">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
+              <div class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
               <div class="info-card-text">
                 <h4>Office Address</h4>
                 <p>14 Admiralty Way, Lekki Phase 1<br />Lagos, Nigeria</p>
               </div>
             </div>
-
             <div class="glass-card info-card">
-              <div class="info-card-icon" aria-hidden="true">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
+              <div class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
               <div class="info-card-text">
                 <h4>Email Us</h4>
-                <p>
-                  <a href="mailto:hello@mykrotechetherworx.com" style="color:var(--color-accent-cyan)">hello@mykrotechetherworx.com</a>
-                </p>
+                <p><a href="mailto:hello@mykrotechetherworx.com" style="color:var(--color-accent-cyan)">hello@mykrotechetherworx.com</a></p>
               </div>
             </div>
-
             <div class="glass-card info-card">
-              <div class="info-card-icon" aria-hidden="true">
-                <i class="fa-solid fa-phone"></i>
-              </div>
+              <div class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
               <div class="info-card-text">
                 <h4>Call Us</h4>
-                <p>
-                  <a href="tel:+2348012345678" style="color:var(--color-accent-cyan)">+234 801 234 5678</a>
-                </p>
+                <p><a href="tel:+2348012345678" style="color:var(--color-accent-cyan)">+234 801 234 5678</a></p>
               </div>
             </div>
-
-            <!-- Map placeholder -->
-            <div class="map-placeholder" role="img" aria-label="Map showing our office location in Lekki, Lagos">
-              <!-- Replace this div with a real Google Maps embed:
-                   <iframe src="https://www.google.com/maps/embed?..." loading="lazy" ...></iframe>
-              -->
+            <div class="map-placeholder" role="img" aria-label="Map — Lekki Phase 1, Lagos">
               <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
               <span>Lekki Phase 1, Lagos, Nigeria</span>
-              <span style="font-size:0.75rem;color:var(--color-text-muted)">(Replace with Google Maps embed)</span>
+              <span style="font-size:.75rem;color:var(--color-text-muted)">(Replace with Google Maps embed)</span>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
+  <!-- ═══════════════════════════════════════════════════════
        FOOTER
-       ============================================================ -->
+       ═══════════════════════════════════════════════════════ -->
   <footer role="contentinfo">
     <div class="container">
-
       <div class="footer-top">
-
-        <!-- Brand column -->
         <div class="footer-brand">
           <a href="#home" class="nav-logo" aria-label="Mykrotech Etherworx — home">
             <img src="mylogo.png" alt="Mykrotech Etherworx Services Ltd" class="nav-logo-img" />
           </a>
           <p class="footer-tagline">Engineering tomorrow's digital landscape. We turn your technology challenges into competitive advantages — one solution at a time.</p>
-          <div class="footer-social" role="list" aria-label="Social media links">
-            <a href="#" class="social-link" role="listitem" aria-label="Twitter / X">
-              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="social-link" role="listitem" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="social-link" role="listitem" aria-label="GitHub">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="social-link" role="listitem" aria-label="Instagram">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="social-link" role="listitem" aria-label="YouTube">
-              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-            </a>
+          <div class="footer-social" role="list" aria-label="Social media">
+            <a href="#" class="social-link" role="listitem" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" role="listitem" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" role="listitem" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" role="listitem" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" role="listitem" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
           </div>
         </div>
-
-        <!-- Company links -->
         <div class="footer-col">
           <h4>Company</h4>
-          <nav class="footer-links" aria-label="Company links">
-            <a href="#about">About Us</a>
-            <a href="#about">Our Team</a>
+          <nav class="footer-links" aria-label="Company">
+            <a href="#who-we-are">About Us</a>
+            <a href="#who-we-are">Our Team</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="blog.html">Blog</a>
+            <a href="blog.html">Insights Hub</a>
             <a href="#contact">Careers</a>
           </nav>
         </div>
-
-        <!-- Services links -->
         <div class="footer-col">
           <h4>Services</h4>
-          <nav class="footer-links" aria-label="Services links">
+          <nav class="footer-links" aria-label="Services">
             <a href="#services">Cloud Computing</a>
             <a href="#services">IT Consulting</a>
             <a href="#services">Cybersecurity</a>
@@ -898,66 +984,48 @@
             <a href="#services">Digital Solutions</a>
           </nav>
         </div>
-
-        <!-- Resources links -->
         <div class="footer-col">
           <h4>Resources</h4>
-          <nav class="footer-links" aria-label="Resources links">
-            <a href="blog.html">All Articles</a>
+          <nav class="footer-links" aria-label="Resources">
+            <a href="blog.html">Insights Hub</a>
+            <a href="learning.html">Training Programs</a>
             <a href="#contact">Case Studies</a>
-            <a href="#contact">Documentation</a>
             <a href="#contact">Support Center</a>
             <a href="#contact">Request a Quote</a>
           </nav>
         </div>
-
       </div>
-
-      <!-- Footer bottom bar -->
       <div class="footer-bottom">
         <p>© 2026 Mykrotech Etherworx Services Ltd. All rights reserved.</p>
-        <nav class="footer-legal" aria-label="Legal links">
+        <nav class="footer-legal" aria-label="Legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
           <a href="#">Cookie Policy</a>
         </nav>
       </div>
-
     </div>
   </footer>
 
-  <!-- ============================================================
-       PORTFOLIO MODAL
-       ============================================================ -->
+  <!-- Portfolio Modal -->
   <div id="portfolio-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details" aria-hidden="true">
     <div class="modal-content">
-
-      <!-- Thumbnail area (dynamically updated by JS) -->
       <div class="modal-thumb thumb-web">
         <div class="modal-thumb-icon" aria-hidden="true">💻</div>
-        <button class="modal-close" aria-label="Close project details">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
+        <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
       </div>
-
-      <!-- Body (dynamically populated by JS) -->
       <div class="modal-body">
         <p class="modal-category">Category</p>
         <h2>Project Title</h2>
-        <p class="modal-desc">Project description goes here.</p>
-        <div class="modal-tags" aria-label="Technology stack"></div>
+        <p class="modal-desc">Description.</p>
+        <div class="modal-tags" aria-label="Tech stack"></div>
         <a href="#contact" class="btn btn-primary btn-sm"
-           onclick="document.getElementById('portfolio-modal').classList.remove('open'); document.body.style.overflow='';">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          Start a Similar Project
+           onclick="document.getElementById('portfolio-modal').classList.remove('open');document.body.style.overflow='';">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Start a Similar Project
         </a>
       </div>
-
     </div>
   </div>
 
-  <!-- Main JavaScript -->
   <script src="js/main.js"></script>
-
 </body>
 </html>

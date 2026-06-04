@@ -570,6 +570,60 @@
   }
 
   /* ============================================================
+     9. ACCORDION — Who We Are section
+     ============================================================ */
+  function initAccordions() {
+    $$('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const isOpen   = trigger.getAttribute('aria-expanded') === 'true';
+        const bodyId   = trigger.getAttribute('aria-controls');
+        const body     = bodyId ? document.getElementById(bodyId) : null;
+
+        /* Close all siblings first */
+        const list = trigger.closest('.accordion-list');
+        if (list) {
+          $$('.accordion-trigger', list).forEach(t => {
+            t.setAttribute('aria-expanded', 'false');
+            const sId = t.getAttribute('aria-controls');
+            const sBody = sId ? document.getElementById(sId) : null;
+            if (sBody) sBody.classList.remove('open');
+          });
+        }
+
+        /* Toggle clicked item */
+        if (!isOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          if (body) body.classList.add('open');
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     10. FAQ ACCORDION
+     ============================================================ */
+  function initFAQ() {
+    $$('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        const body   = trigger.nextElementSibling;
+
+        /* Close all other FAQs */
+        $$('.faq-trigger').forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+          if (t.nextElementSibling) t.nextElementSibling.classList.remove('open');
+        });
+
+        /* Toggle this one */
+        if (!isOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          if (body) body.classList.add('open');
+        }
+      });
+    });
+  }
+
+  /* ============================================================
      BOOT — run everything when DOM is ready
      ============================================================ */
   function boot() {
@@ -582,6 +636,8 @@
     initContactForm();
     initBackToTop();
     initTypingAnimation();
+    initAccordions();
+    initFAQ();
   }
 
   if (document.readyState === 'loading') {
