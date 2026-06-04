@@ -387,10 +387,19 @@ section:nth-child(even) {
 }
 
 .nav-logo-img {
-  height: 48px;
+  height: 72px;
   width: auto;
   display: block;
   object-fit: contain;
+  /* mix-blend-mode: screen removes the black background on dark navbars */
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.55)) drop-shadow(0 0 28px rgba(139, 92, 246, 0.3));
+  transition: filter var(--transition-base), transform var(--transition-base);
+}
+
+.nav-logo:hover .nav-logo-img {
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.85)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.5));
+  transform: scale(1.04);
 }
 
 .nav-logo .logo-icon {
