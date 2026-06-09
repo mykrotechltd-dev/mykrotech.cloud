@@ -47,7 +47,8 @@
   --gradient-orb-purple:  radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 65%);
 
   /* Typography */
-  --font-heading: 'Space Grotesk', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+  --font-heading: 'Exo 2', sans-serif;
   --font-body:    'Inter', sans-serif;
 
   /* Spacing */
@@ -118,11 +119,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.12;
   color: var(--color-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.6rem, 6.5vw, 5rem);   letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.9rem, 4vw, 3rem);      letter-spacing: -0.025em; }
+h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.6rem); letter-spacing: 0.02em; }
+h2 { font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -0.02em; }
 h3 { font-size: clamp(1.15rem, 2.5vw, 1.45rem); letter-spacing: -0.01em; }
 h4 { font-size: 1.0625rem; letter-spacing: -0.01em; }
 
@@ -157,18 +158,18 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent-cyan);
   background: rgba(0, 229, 255, 0.07);
-  border: 1px solid rgba(0, 229, 255, 0.22);
+  border: 1px solid rgba(0, 229, 255, 0.25);
   border-radius: 100px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(0,229,255,0.08);
+  box-shadow: 0 0 20px rgba(0,229,255,0.1), inset 0 0 12px rgba(0,229,255,0.04);
   animation: neonPulse 3.5s ease-in-out infinite;
 }
 
@@ -571,10 +572,10 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent-cyan);
   background: rgba(0,229,255,0.07);
@@ -597,10 +598,11 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
 
 /* Hero title */
 .hero-title-caps {
-  font-size: clamp(2.8rem, 7.5vw, 5.4rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 6.5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -659,15 +661,15 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
 }
 
 .stat-number {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-accent-cyan);
-  text-shadow: 0 0 24px rgba(0,229,255,0.45);
+  text-shadow: 0 0 24px rgba(0,229,255,0.55), 0 0 48px rgba(0,229,255,0.2);
   display: block;
   line-height: 1;
   margin-bottom: 5px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .stat-label {
@@ -2005,9 +2007,9 @@ footer::before {
 .method-card:hover { transform: translateY(-4px); }
 
 .method-number {
-  font-family: var(--font-heading);
-  font-size: 3.8rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 900;
   background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2015,7 +2017,9 @@ footer::before {
   line-height: 1;
   margin-bottom: 24px;
   display: block;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+  filter: drop-shadow(0 0 12px rgba(0,229,255,0.35));
 }
 
 .method-icon {
@@ -2585,4 +2589,333 @@ footer::before {
   outline: 2px solid var(--color-accent-cyan);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* =============================================================================
+   HERO SCAN LINE — futuristic sweep effect
+   ============================================================================= */
+.hero-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,229,255,0.5) 30%, rgba(168,85,247,0.5) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  animation: scanLine 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes scanLine {
+  0%   { top: 15%;  opacity: 0; }
+  5%   { opacity: 0.7; }
+  90%  { opacity: 0.5; }
+  100% { top: 90%; opacity: 0; }
+}
+
+/* Hero grid overlay for depth */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.5) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.5) 0%, transparent 75%);
+}
+
+/* =============================================================================
+   BENTO GRID — Apple-style asymmetric services layout
+   ============================================================================= */
+.services-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.bento-wide { grid-column: span 2; }
+
+.bento-card {
+  padding: 34px 30px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+}
+
+/* Animated top shimmer */
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.5), rgba(168,85,247,0.4), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+/* Bottom-right corner glow orb */
+.bento-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; right: -40px;
+  width: 130px; height: 130px;
+  background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+  opacity: 0;
+}
+
+.bento-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-5px);
+}
+
+.bento-card:hover::before { opacity: 1; }
+.bento-card:hover::after  { opacity: 1; }
+
+/* Wide card: horizontal layout */
+.bento-wide-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  flex: 1;
+}
+
+.bento-wide-visual {
+  flex-shrink: 0;
+  width: 120px; height: 120px;
+  background: rgba(0,229,255,0.05);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.bento-wide-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(0,229,255,0.12), transparent 60%);
+}
+
+.bento-card:hover .bento-wide-visual {
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 0 28px rgba(0,229,255,0.18);
+}
+
+.bento-wide-text { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-cyan);
+  width: fit-content;
+}
+
+.service-tag::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--color-accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-accent-cyan);
+  flex-shrink: 0;
+}
+
+/* Featured bento card (IT Training — purple accent) */
+.bento-featured {
+  border-color: rgba(168,85,247,0.3);
+  background: rgba(168,85,247,0.05);
+}
+
+.bento-featured::before {
+  background: linear-gradient(90deg, transparent, rgba(168,85,247,0.6), rgba(0,229,255,0.3), transparent);
+}
+
+.bento-featured::after {
+  background: radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%);
+}
+
+.bento-featured:hover {
+  border-color: rgba(168,85,247,0.7);
+  box-shadow: var(--shadow-neon-purple);
+}
+
+.bento-featured .service-tag {
+  color: var(--color-accent-purple);
+}
+
+.bento-featured .service-tag::before {
+  background: var(--color-accent-purple);
+  box-shadow: 0 0 8px var(--color-accent-purple);
+}
+
+.bento-featured .service-link {
+  color: var(--color-accent-purple);
+}
+
+.bento-featured .service-link:hover { color: #c084fc; }
+
+/* Responsive bento */
+@media (max-width: 1024px) {
+  .services-bento { grid-template-columns: 1fr 1fr; }
+  .bento-wide { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .services-bento { grid-template-columns: 1fr; }
+  .bento-wide { grid-column: span 1; }
+  .bento-wide-inner { flex-direction: column; }
+  .bento-wide-visual { width: 80px; height: 80px; }
+}
+
+/* =============================================================================
+   SVG ICON UPDATES — why-us & methodology
+   ============================================================================= */
+.why-icon svg,
+.method-icon svg {
+  width: 28px; height: 28px;
+}
+
+.method-icon {
+  width: 64px; height: 64px;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 22px;
+  transition: box-shadow var(--transition-base), transform var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.method-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(0,229,255,0.12), transparent 60%);
+}
+
+/* =============================================================================
+   INSIGHT THUMBNAILS — rich gradient tiles, no emoji
+   ============================================================================= */
+.insight-thumb-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+/* Circuit grid overlay on insight thumbs */
+.insight-thumb-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ithumb-icon {
+  position: relative;
+  z-index: 2;
+  opacity: 0.7;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.insight-card:hover .ithumb-icon {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Insight thumb brand accent lines */
+.insight-thumb-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+  opacity: 0.5;
+  z-index: 3;
+}
+
+/* =============================================================================
+   CTA ZONE — animated border
+   ============================================================================= */
+.cta-zone-border {
+  position: absolute;
+  inset: 28px;
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+  background: transparent;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.cta-zone-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(var(--cta-angle, 135deg), rgba(0,229,255,0.3), rgba(168,85,247,0.3), rgba(0,229,255,0.15));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  padding: 1px;
+  animation: rotateBorderAngle 4s linear infinite;
+}
+
+@keyframes rotateBorderAngle {
+  to { --cta-angle: 495deg; }
+}
+
+/* =============================================================================
+   QUOTE SECTION — enhanced
+   ============================================================================= */
+.quote-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  font-style: italic;
+  letter-spacing: -0.005em;
+}
+
+/* =============================================================================
+   MOBILE HERO TITLE FIX for Orbitron
+   ============================================================================= */
+@media (max-width: 640px) {
+  .hero-title-caps { font-size: clamp(1.7rem, 8vw, 2.6rem); letter-spacing: 0.01em; }
+  h1 { font-size: clamp(2rem, 7vw, 3rem); }
+  .method-number { font-size: 2.4rem; }
+  .stat-number { font-size: 1.55rem; }
 }
