@@ -330,13 +330,29 @@
     const content  = $('.modal-content', overlay);
     const closeBtn = $('.modal-close', overlay);
 
+    /* SVG icon library for accessibility */
+    const iconLibrary = {
+      briefcase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>',
+      lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+      smartphone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>',
+      wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/><circle cx="17" cy="15" r="2"/></svg>',
+      shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+    };
+
+    function getSvgIcon(iconName) {
+      return iconLibrary[iconName] || iconLibrary.briefcase;
+    }
+
     function openModal(data) {
       /* Populate modal with card data */
       const thumb = $('.modal-thumb', overlay);
       if (thumb) {
         thumb.className  = `modal-thumb ${data.thumbClass || ''}`;
         const icon = $('.modal-thumb-icon', thumb);
-        if (icon) icon.textContent = data.icon || '💻';
+        if (icon) {
+          icon.innerHTML = getSvgIcon(data.icon || 'briefcase');
+        }
       }
 
       const cat = $('.modal-category', overlay);

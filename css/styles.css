@@ -25,7 +25,7 @@
   /* Text */
   --color-text-primary:   #eef4ff;
   --color-text-secondary: #8fa8c8;
-  --color-text-muted:     #3d5470;
+  --color-text-muted:     #a3b5d1;
 
   /* Borders */
   --color-border:        rgba(0, 229, 255, 0.10);
@@ -179,7 +179,7 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -289,6 +289,7 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
               transform var(--transition-base);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* Inner top-left shine */
@@ -1172,6 +1173,7 @@ section:nth-child(even) { background-color: var(--color-bg-secondary); }
   transition: all var(--transition-base);
   border: 1px solid var(--color-border);
   background: var(--color-surface-solid);
+  cursor: pointer;
 }
 
 .blog-card:hover {
@@ -1740,6 +1742,7 @@ footer::before {
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
 }
 
 .training-card:hover {
@@ -1837,6 +1840,7 @@ footer::before {
   flex-direction: column;
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   background: var(--color-surface-solid);
+  cursor: pointer;
 }
 
 .insight-card:hover {
