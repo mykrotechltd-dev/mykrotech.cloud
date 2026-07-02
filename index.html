@@ -11,6 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&family=Inter:wght@400;500;600&display=swap" as="style" />
   <meta name="description" content="Mykrotech Etherworx Services Ltd — Cloud, Cybersecurity, Networking, IT Consulting, Software Development & Digital Solutions for businesses across Africa." />
   <meta name="theme-color" content="#050a14" />
   <meta property="og:title"       content="Mykrotech Etherworx Services Ltd" />
@@ -25,6 +26,8 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
@@ -667,7 +670,7 @@
               data-modal-desc="Comprehensive technology strategy and digital transformation consulting for leading African enterprise."
               data-stack='["Consulting","Strategy","Digital Transformation"]'
               aria-label="View client engagement details">
-              <div class="project-thumb thumb-web"><img src="images/engagement-1.jpg" alt="Strategic Consulting Engagement" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-web"><img src="images/engagement-1.jpg" alt="Strategic consulting engagement showing enterprise technology strategy planning" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Client Engagement</p>
                 <h3>Strategic Consulting</h3>
@@ -681,7 +684,7 @@
               data-modal-desc="Enterprise cybersecurity infrastructure and zero-trust architecture deployment for regulated financial institution."
               data-stack='["Cybersecurity","Infrastructure","Compliance"]'
               aria-label="View cybersecurity engagement details">
-              <div class="project-thumb thumb-security"><img src="images/engagement-2.jpg" alt="Cybersecurity Implementation" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-security"><img src="images/engagement-2.jpg" alt="Cybersecurity implementation featuring zero-trust architecture and threat detection systems" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Cybersecurity</p>
                 <h3>Security Infrastructure</h3>
@@ -695,7 +698,7 @@
               data-modal-desc="Large-scale cloud migration and multi-cloud architecture implementation for enterprise organisation."
               data-stack='["Cloud Migration","Infrastructure","AWS"]'
               aria-label="View cloud engagement details">
-              <div class="project-thumb thumb-cloud"><img src="images/engagement-3.jpg" alt="Cloud Infrastructure Migration" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-cloud"><img src="images/engagement-3.jpg" alt="Cloud infrastructure migration showing multi-cloud architecture on AWS and Azure platforms" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Cloud Infrastructure</p>
                 <h3>Cloud Migration</h3>
@@ -709,7 +712,7 @@
               data-modal-desc="Custom mobile application development and deployment for field operations and enterprise workforce management."
               data-stack='["Mobile Development","React Native","Firebase"]'
               aria-label="View mobile app engagement details">
-              <div class="project-thumb thumb-mobile"><img src="images/engagement-4.jpg" alt="Mobile App Development" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-mobile"><img src="images/engagement-4.jpg" alt="Mobile app development for enterprise workforce management and field operations" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Mobile Application</p>
                 <h3>Mobile App Development</h3>
@@ -723,7 +726,7 @@
               data-modal-desc="B2B payments, invoicing, and financial management system for enterprise banking and financial services organisation."
               data-stack='["Web Development","Financial Systems","Integration"]'
               aria-label="View financial systems engagement details">
-              <div class="project-thumb thumb-web"><img src="images/engagement-5.jpg" alt="Financial Systems Implementation" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-web"><img src="images/engagement-5.jpg" alt="Financial systems implementation showing B2B payments and invoicing platform" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Web Application</p>
                 <h3>Financial Systems</h3>
@@ -737,7 +740,7 @@
               data-modal-desc="SIEM platform and threat monitoring system implementation with real-time anomaly detection and security operations centre support."
               data-stack='["SIEM","Threat Detection","Security Operations"]'
               aria-label="View threat detection engagement details">
-              <div class="project-thumb thumb-security"><img src="images/engagement-6.jpg" alt="Threat Detection & Monitoring" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <div class="project-thumb thumb-security"><img src="images/engagement-6.jpg" alt="Threat detection and monitoring with SIEM platform and real-time anomaly detection" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="400" height="300" /></div>
               <div class="project-body">
                 <p class="project-category">Cybersecurity</p>
                 <h3>Threat Detection Platform</h3>
@@ -946,28 +949,28 @@
             <h3>Send Us a Message</h3>
             <p>Fill in the details below and our team will reach out to discuss how we can help.</p>
 
-            <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <form id="contact-form" class="contact-form" aria-label="Contact form">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <input type="text" id="name" name="name" placeholder="e.g. Amaka Okafor" required autocomplete="name" aria-required="true" />
-                  <span class="field-error" role="alert"></span>
+                  <input type="text" id="name" name="name" placeholder="e.g. Amaka Okafor" required autocomplete="name" aria-required="true" aria-describedby="name-error" />
+                  <span class="field-error" id="name-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="email">Email Address <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email" aria-required="true" />
-                  <span class="field-error" role="alert"></span>
+                  <input type="email" id="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email" aria-required="true" aria-describedby="email-error" />
+                  <span class="field-error" id="email-error" role="alert"></span>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" />
-                  <span class="field-error" role="alert"></span>
+                  <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" aria-describedby="phone-error" />
+                  <span class="field-error" id="phone-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="service">Service Interest <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                  <select id="service" name="service" required aria-required="true">
+                  <select id="service" name="service" required aria-required="true" aria-describedby="service-error">
                     <option value="">Select a service…</option>
                     <option value="cloud">Cloud Computing</option>
                     <option value="consulting">IT Consulting</option>
@@ -977,13 +980,13 @@
                     <option value="digital">Digital Solutions &amp; Apps</option>
                     <option value="training">Training Programs</option>
                   </select>
-                  <span class="field-error" role="alert"></span>
+                  <span class="field-error" id="service-error" role="alert"></span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="message">Your Message <span aria-hidden="true" style="color:var(--color-error)">*</span></label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, goals, or challenge." required aria-required="true"></textarea>
-                <span class="field-error" role="alert"></span>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, goals, or challenge." required aria-required="true" aria-describedby="message-error"></textarea>
+                <span class="field-error" id="message-error" role="alert"></span>
               </div>
               <div class="form-submit">
                 <button type="submit" class="btn btn-primary">
@@ -1115,8 +1118,7 @@
         <h2>Project Title</h2>
         <p class="modal-desc">Description.</p>
         <div class="modal-tags" aria-label="Tech stack"></div>
-        <a href="#contact" class="btn btn-primary btn-sm"
-           onclick="document.getElementById('portfolio-modal').classList.remove('open');document.body.style.overflow='';">
+        <a href="#contact" class="btn btn-primary btn-sm" data-close-modal="true">
           <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Start a Similar Project
         </a>
       </div>

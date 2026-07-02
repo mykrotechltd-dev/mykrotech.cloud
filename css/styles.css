@@ -112,6 +112,26 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 input, textarea, select { font-family: inherit; font-size: inherit; }
 
 /* =============================================================================
+   SKIP LINK
+   ============================================================================= */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent-cyan);
+  color: #02060f;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 20px;
+  left: 20px;
+}
+
+/* =============================================================================
    TYPOGRAPHY
    ============================================================================= */
 h1, h2, h3, h4, h5, h6 {

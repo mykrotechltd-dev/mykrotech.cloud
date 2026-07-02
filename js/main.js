@@ -398,6 +398,10 @@
     /* Close handlers */
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
+    /* Close button in modal CTA */
+    const closeBtn2 = $('[data-close-modal]', overlay);
+    if (closeBtn2) closeBtn2.addEventListener('click', closeModal);
+
     overlay.addEventListener('click', e => {
       if (e.target === overlay) closeModal();
     });
